@@ -4,7 +4,6 @@ title: "Ember CLI Bootstrap Modals"
 category: ruby
 ---
 
-Here's how to integrate bootstrap modals into EmberJS quickly and easily.
 It's really easy to create reusable modal code to integrate
 [Twitter Bootstrap modals](http://getbootstrap.com/javascript/#modals) into
 [EmberJS](http://emberjs.com/) projects. Here's how to do it:
