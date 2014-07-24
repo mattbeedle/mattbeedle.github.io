@@ -1,7 +1,16 @@
 ---
 layout: post
 title: "Ember CLI Bootstrap Modals"
-category: ruby
+category: javascript
+description: "A quick and easy walkthrough for integrating Twitter Bootstrap
+modals into EmberJS"
+keywords:
+  - EmberJS
+  - Twitter Bootstrap
+  - Twitter Bootstrap modals
+  - Modals
+  - Javascript
+  - CoffeeScript
 ---
 
 It's really easy to create reusable modal code to integrate

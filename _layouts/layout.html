@@ -5,7 +5,11 @@
   <title>{{ page.title }}</title>
 
   <meta name="author" content="{{ site.author.name }}" />
-  <meta name="description" content="{{ site.description }}" />
+
+  <meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{ site.description }}{% endif %}" />
+  {% if page.keywords %}
+  <meta name="keywords" content="{{page.keywords | join: ','}}" />
+  {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
