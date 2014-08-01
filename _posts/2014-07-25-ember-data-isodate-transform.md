@@ -29,7 +29,6 @@ IsodateTransform = DS.Transform.extend
   deserialize: (serialized) ->
     if serialized
       moment(serialized).toDate()
-    serialized
 
   serialize: (deserialized) ->
     if deserialized
@@ -39,7 +38,6 @@ IsodateTransform = DS.Transform.extend
         # I'm using the European date format here. US readers may be able to
         # leave this second argument out
         moment(deserialized, 'DD/MM/YY h:mm a').toISOString()
-    deserialized
 
 `export default IsodateTransform`
 {% endhighlight %}
