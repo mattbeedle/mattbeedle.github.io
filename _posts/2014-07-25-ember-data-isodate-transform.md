@@ -28,18 +28,18 @@ bower install --save moment
 IsodateTransform = DS.Transform.extend
   deserialize: (serialized) ->
     if serialized
-      return moment(serialized).toDate()
-    return serialized
+      moment(serialized).toDate()
+    serialized
 
   serialize: (deserialized) ->
     if deserialized
       if deserialized instanceof Date
-        return moment(deserialized).toISOString()
+        moment(deserialized).toISOString()
       else
         # I'm using the European date format here. US readers may be able to
         # leave this second argument out
-        return moment(deserialized, 'DD/MM/YY h:mm a').toISOString()
-    return deserialized
+        moment(deserialized, 'DD/MM/YY h:mm a').toISOString()
+    deserialized
 
 `export default IsodateTransform`
 {% endhighlight %}
