@@ -13,8 +13,16 @@ keywords:
 
 Most of my EmberJS projects use a datetime field somewhere on the backend.
 Reading them from the API is easy using a 'date' attribute type, but this
-doesn't post the date back to the API in a very friendly format. My API expects
-to receive date times in ISO 8601 format. We can easily achieve this using
+doesn't serialize to a very API friendly format. For example:
+
+```javascript
+new Date().toString()
+"Wed Aug 06 2014 12:39:29 GMT+0200 (CEST)"
+```
+
+My API expects
+to receive date times in [ISO 8601
+format](http://en.wikipedia.org/wiki/ISO_8601). We can easily achieve this using
 [MomentJS](http://momentjs.com) and an
 an [Ember Data
 Transform](http://emberjs.com/api/data/classes/DS.Transform.html).
@@ -41,8 +49,9 @@ IsodateTransform = DS.Transform.extend
       if deserialized instanceof Date
         moment(deserialized).toISOString()
       else
-        # I'm using the European date format here. US readers may be able to
-        # leave this second argument out
+        # I'm using the European date format here. This is how date strings are
+        # set on my models by my datetimepicker inputs. US readers may be able
+        # to leave this second argument out
         moment(deserialized, 'DD/MM/YY h:mm a').toISOString()
 
 `export default IsodateTransform`
