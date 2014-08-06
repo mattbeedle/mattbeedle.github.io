@@ -12,10 +12,12 @@ keywords:
 ---
 
 Most of my EmberJS projects use a datetime field somewhere on the backend.
-Rather than use string attributes on the client side, it's nice to transform
-those values to javascript date objects. This can be done easily using
-an [Ember Data Transform](http://emberjs.com/api/data/classes/DS.Transform.html)
-and [MomentJS](http://momentjs.com)
+Reading them from the API is easy using a 'date' attribute type, but this
+doesn't post the date back to the API in a very friendly format. My API expects
+to receive date times in ISO 8601 format. We can easily achieve this using
+[MomentJS](http://momentjs.com) and an
+an [Ember Data
+Transform](http://emberjs.com/api/data/classes/DS.Transform.html).
 
 {% highlight bash %}
 bower install --save moment
@@ -26,10 +28,14 @@ bower install --save moment
 `import DS from 'ember-data'`
 
 IsodateTransform = DS.Transform.extend
+  # The deserialize function just transforms the string it receives from the
+  # server JSON response into a date.
   deserialize: (serialized) ->
     if serialized
       moment(serialized).toDate()
 
+  # The serialize function takes the value of the attribute on the model and
+  # transforms it into a nice ISO date to send to our server.
   serialize: (deserialized) ->
     if deserialized
       if deserialized instanceof Date
