@@ -29,7 +29,7 @@ So I wrote a quick [Git Alias](http://githowto.com/aliases) to help me out. To
 create the alias run the following command from your terminal:
 
 ```bash
-git config --global alias.cleanup '!git checkout master && git branch --merged | grep -v \"*\" | xargs -n 1 git branch -d'
+git config --global alias.cleanup '!git checkout master && git branch --merged | grep -v "*" | xargs -n 1 git branch -d'
 ```
 
 This alias will automatically delete all branches which have already been merged
