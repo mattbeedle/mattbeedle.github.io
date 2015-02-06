@@ -190,7 +190,7 @@ We will need a confirmation/new template now to be rendered.
 {% endhighlight %}
 
 
-And finally we will need to create a ```ConfirmationNewController``` to handle
+Now we will need to create a ```ConfirmationNewController``` to handle
 the events from the confirmation/new template.
 
 ```app/controllers/confirmation/new.coffee```
@@ -205,6 +205,18 @@ ConfirmationNewController = ModalController.extend
       @send 'closeModal'
 
 `export default ConfirmationNewController`
+{% endhighlight %}
+
+Finall we must create a ```ConfirmationNewView``` that extends ```ModalView```
+to get all of the modal view functionality.
+
+```app/views/confirmation/new.coffee```
+{% highlight coffeescript %}
+`import ModalView from 'ember-cli-bootstrap-modal-example/views/modal'`
+
+ConfirmationNewView = ModalView.extend()
+
+`export default ConfirmationNewView`
 {% endhighlight %}
 
 ## Notes & links
