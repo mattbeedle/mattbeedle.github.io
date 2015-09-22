@@ -1,5 +1,5 @@
 markdown: rdiscount
-pygments: true
+highlighter: true
 permalink: /posts/:title
 rdiscount:
   extensions: [smart]
@@ -14,3 +14,4 @@ author :
   github : mattbeedle
   twitter : mattbeedle
   email: mattbeedle@gmail.com
+baseurl:
