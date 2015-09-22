@@ -4,13 +4,6 @@ title: "USDA Nutrient Database Web Service"
 category: web
 ---
 
-## TLD;R
-I built a web service that you can use to query the USDA National Nutrient
-Database. You can find the docs at
-[http://docs.usdanutrientservice.apiary.io/](http://docs.usdanutrientservice.apiary.io/).
-It provides querying, full text searching, pagination, caching, and is also kept up to date with the latest data.
-
-## Background
 The US Department of Agriculture provides a fairly comprehensive database of
 foods and their nutritional information. However, I think they don't really want
 anyone to use it, as it's only available as separate US-ASCII text files or,
@@ -37,3 +30,10 @@ support. Feature requests may be sent through UserVoice. Maybe I'll throw an obj
 together in the coming months, to allow people to deal with ruby instead of
 JSON. Anyway, you can find the [USDA Nutrient Service
 here](http://usda-nutrient-service.mattbeedle.name)... Enjoy
+
+### TL;DR
+I built a web service that you can use to query the USDA National Nutrient
+Database. You can find the docs at
+[http://docs.usdanutrientservice.apiary.io/](http://docs.usdanutrientservice.apiary.io/).
+It provides querying, full text searching, pagination, caching, and is also kept up to date with the latest data.
+
