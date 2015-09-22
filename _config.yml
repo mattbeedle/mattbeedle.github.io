@@ -1,8 +1,9 @@
 markdown: rdiscount
-pygments: true
+highlighter: true
 permalink: /posts/:title
 rdiscount:
   extensions: [smart]
+exclude: [ Gemfile, Gemfile.lock, gems, _assets, bower_components ]
 title : Matt Beedle
 production_url : http://mattbeedle.name
 description: "Blog attempt 5, by Matt Beedle"
@@ -14,3 +15,4 @@ author :
   github : mattbeedle
   twitter : mattbeedle
   email: mattbeedle@gmail.com
+baseurl:
